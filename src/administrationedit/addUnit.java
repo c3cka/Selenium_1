@@ -69,19 +69,19 @@ public class addUnit {
                 driver.findElement(By.xpath("//*[@id='address']")).sendKeys("Zagrebačka 7");
 
                 //5. Select location
-				//driver.findElement(By.xpath("//*[@id=\'ui-id-16\']")).click();
+				driver.findElement(By.xpath("//*[@id=\'location\']")).sendKeys(Keys.DOWN);
 				
 				driver.findElement(By.xpath("//*[@id=\'tab-basic\']/div[16]/div[1]/div[1]/input")).sendKeys("Rijeka");
 				driver.findElement(By.xpath("//*[@id=\'tab-basic\']/div[16]/div[1]/div[1]/a")).click();
 				
 				//6. Rating
 				Select rating = new Select(driver.findElement(By.id("rating")));
-				int rat = r.nextInt(rating.getOptions().size());
+				int rat = r.nextInt(rating.getOptions().size() - 1) + 1;
 				rating.selectByIndex(rat);
 				
 				//7. Select Office
 				Select office = new Select(driver.findElement(By.id("office")));
-				int ofcn = r.nextInt(office.getOptions().size());
+				int ofcn = r.nextInt(office.getOptions().size() - 1) + 1;
 				office.selectByIndex(ofcn);
 
                 //7. Select owner
